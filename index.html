@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Yasmim ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    color:white;
+    text-align:center;
+}
+
+header{
+    padding:60px 20px;
+}
+
+h1{
+    font-size:3em;
+}
+
+section{
+    margin:30px auto;
+    max-width:700px;
+    background:rgba(255,255,255,0.15);
+    padding:20px;
+    border-radius:20px;
+    backdrop-filter:blur(5px);
+}
+
+button{
+    background:white;
+    color:#ff4f81;
+    border:none;
+    padding:12px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#carta{
+    display:none;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    color:#ff4f81;
+    margin:10px;
+    padding:15px;
+    border-radius:15px;
+}
+
+footer{
+    padding:30px;
+}
+
+.heart{
+    position:fixed;
+    font-size:20px;
+    animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(100vh);
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>❤️ Yasmim ❤️</h1>
+    <p>Feliz Dia dos Namorados, meu amor!</p>
+</header>
+
+<section>
+    <h2>⏳ Nosso Tempo Juntos</h2>
+    <p id="contador"></p>
+</section>
+
+<section>
+    <h2>💌 Uma Carta Para Você</h2>
+    <button onclick="mostrarCarta()">Abrir Carta</button>
+
+    <div id="carta">
+        <p>
+        Meu amor,
+
+        Quem diria que uma festa mudaria tanto a minha vida?
+
+        Entre tantas pessoas, encontrei você. E desde então,
+        meus dias ficaram mais felizes, mais leves e muito mais bonitos.
+
+        Mesmo que nossa história tenha começado há pouco tempo,
+        você já se tornou uma das pessoas mais importantes da minha vida.
+
+        Eu amo tudo em você.
+        Seu sorriso, seu jeito, sua voz, suas qualidades
+        e cada pequeno detalhe que faz você ser você.
+
+        Obrigado por existir.
+
+        ❤️ Eu te amo.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>💖 Motivos pelos quais eu te amo</h2>
+
+    <div class="card">Seu sorriso ilumina meu dia.</div>
+    <div class="card">Você me faz feliz.</div>
+    <div class="card">Seu jeito é único.</div>
+    <div class="card">Eu amo passar tempo com você.</div>
+    <div class="card">Porque você é você. ❤️</div>
+</section>
+
+<section>
+    <h2>🎁 Surpresa</h2>
+
+    <button onclick="surpresa()">
+        Não clique aqui 😳
+    </button>
+</section>
+
+<footer>
+    Feito com muito amor ❤️
+</footer>
+
+<script>
+function mostrarCarta(){
+    document.getElementById("carta").style.display="block";
+}
+
+function surpresa(){
+    alert("Yasmim, você é a melhor coisa que aconteceu na minha vida. ❤️");
+}
+
+const inicio = new Date("2026-05-31");
+const hoje = new Date();
+
+const diff = hoje - inicio;
+const dias = Math.floor(diff / (1000*60*60*24));
+
+document.getElementById("contador").innerText =
+"Estamos juntos há " + dias + " dias ❤️";
+
+function criarCoracao(){
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.classList.add("heart");
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration =
+    (Math.random()*3+2) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+}
+
+setInterval(criarCoracao,300);
+</script>
+
+</body>
+</html>
